@@ -11,6 +11,8 @@ import { SharedModule } from '../shared/shared.module';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
+import { PromesasComponent } from './promesas/promesas.component';
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 
 @NgModule({
@@ -20,6 +22,8 @@ import { AccountSettingsComponent } from './account-settings/account-settings.co
     Grafica1Component,
     PagesComponent,
     AccountSettingsComponent,
+    PromesasComponent,
+    RxjsComponent,
   ],
   exports:[
     DashboardComponent,
