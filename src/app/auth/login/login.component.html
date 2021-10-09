@@ -10,8 +10,10 @@
     <div class="card-body">
       <form
         class="form-horizontal form-material"
+        autocomplete="off"
+        [formGroup]="loginForm"
         id="loginform"
-        (submit)="login()"
+        (ngSubmit)="login()"
       >
         <a href="javascript:void(0)" class="text-center db"
           ><img src="../assets/images/logo-icon.png" alt="Home" /><br /><img
@@ -22,9 +24,9 @@
           <div class="col-xs-12">
             <input
               class="form-control"
-              type="text"
-              required=""
-              placeholder="Username"
+              type="email"
+              placeholder="Email"
+              formControlName="email"
             />
           </div>
         </div>
@@ -33,8 +35,8 @@
             <input
               class="form-control"
               type="password"
-              required=""
               placeholder="Password"
+              formControlName="password"
             />
           </div>
         </div>
@@ -45,6 +47,7 @@
                 id="checkbox-signup"
                 type="checkbox"
                 class="filled-in chk-col-light-blue"
+                formControlName="remember"
               />
               <label for="checkbox-signup"> Remember me </label>
             </div>
@@ -67,31 +70,14 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-xs-12 col-sm-12 col-md-12 m-t-10 text-center">
-            <div class="social">
-              <a
-                href="javascript:void(0)"
-                class="btn btn-facebook"
-                data-toggle="tooltip"
-                title="Login with Facebook"
-              >
-                <i aria-hidden="true" class="fa fa-facebook"></i>
-              </a>
-              <a
-                href="javascript:void(0)"
-                class="btn btn-googleplus"
-                data-toggle="tooltip"
-                title="Login with Google"
-              >
-                <i aria-hidden="true" class="fa fa-google-plus"></i>
-              </a>
-            </div>
+          <div class="col-xs-12 col-sm-12 col-md-12 m-t-10 mb-4 text-center" id="google-btn">
+            <div id="my-signin2"></div>
           </div>
         </div>
         <div class="form-group m-b-0">
           <div class="col-sm-12 text-center">
             Don't have an account?
-            <a href="pages-register2.html" class="text-primary m-l-5"
+            <a routerLink="/register" class="text-primary m-l-5"
               ><b>Sign Up</b></a
             >
           </div>

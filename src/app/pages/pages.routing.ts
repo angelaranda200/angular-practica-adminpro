@@ -1,3 +1,4 @@
+import { AuthGuard } from './../guards/auth.guard';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
@@ -15,6 +16,7 @@ const routes: Routes = [
     {
         path:'dashboard',
         component:PagesComponent,
+        canActivate:[AuthGuard],
         children:[
           {
             path: '',
