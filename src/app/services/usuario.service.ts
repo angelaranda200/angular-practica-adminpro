@@ -21,7 +21,7 @@ declare const gapi:any;
 })
 export class UsuarioService {
   public auth2:any;
-  public usuario:Usuario;
+  public usuario!:Usuario;
 
   constructor(private http:HttpClient,
               private router:Router,
@@ -121,7 +121,7 @@ export class UsuarioService {
                   })
                 )
   }
-  loginGoogle(token){
+  loginGoogle(token:any){
     return this.http.post(`${base_url}/login/google`,{token})
                 .pipe(
                   tap((resp:any)=>{
